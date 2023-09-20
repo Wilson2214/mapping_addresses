@@ -1,0 +1,41 @@
+[2023-02-20 01:21:50,467] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: autoetl-coordinates.get_mapping manual__2023-02-20T01:21:41.630513+00:00 [queued]>
+[2023-02-20 01:21:50,480] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: autoetl-coordinates.get_mapping manual__2023-02-20T01:21:41.630513+00:00 [queued]>
+[2023-02-20 01:21:50,482] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2023-02-20 01:21:50,483] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2023-02-20 01:21:50,485] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2023-02-20 01:21:50,500] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): get_mapping> on 2023-02-20 01:21:41.630513+00:00
+[2023-02-20 01:21:50,511] {standard_task_runner.py:52} INFO - Started process 5654 to run task
+[2023-02-20 01:21:50,516] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'autoetl-coordinates', 'get_mapping', 'manual__2023-02-20T01:21:41.630513+00:00', '--job-id', '29', '--raw', '--subdir', 'DAGS_FOLDER/autoetl-coordinates.py', '--cfg-path', '/tmp/tmph4lc7usg', '--error-file', '/tmp/tmp84xg_4xg']
+[2023-02-20 01:21:50,519] {standard_task_runner.py:80} INFO - Job 29: Subtask get_mapping
+[2023-02-20 01:21:50,592] {task_command.py:369} INFO - Running <TaskInstance: autoetl-coordinates.get_mapping manual__2023-02-20T01:21:41.630513+00:00 [running]> on host 83ee186d463f
+[2023-02-20 01:21:50,675] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=autoetl-coordinates
+AIRFLOW_CTX_TASK_ID=get_mapping
+AIRFLOW_CTX_EXECUTION_DATE=2023-02-20T01:21:41.630513+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-02-20T01:21:41.630513+00:00
+[2023-02-20 01:21:50,678] {logging_mixin.py:115} INFO - Load Data
+[2023-02-20 01:21:51,609] {logging_mixin.py:115} WARNING - /home/***/.local/lib/python3.7/site-packages/***/operators/python.py:189 DtypeWarning: Columns (12,13,15,21) have mixed types.Specify dtype option on import or set low_memory=False.
+[2023-02-20 01:22:35,662] {logging_mixin.py:115} INFO - Load mapping config
+[2023-02-20 01:22:35,693] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/autoetl-coordinates.py", line 222, in get_mapping
+    "new_locations": locations[['updated_lat', 'updated_lon', 'f_addr1']],
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/frame.py", line 3464, in __getitem__
+    indexer = self.loc._get_listlike_indexer(key, axis=1)[1]
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/indexing.py", line 1314, in _get_listlike_indexer
+    self._validate_read_indexer(keyarr, indexer, axis)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/indexing.py", line 1377, in _validate_read_indexer
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['updated_lat', 'updated_lon'] not in index"
+[2023-02-20 01:22:35,762] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=autoetl-coordinates, task_id=get_mapping, execution_date=20230220T012141, start_date=20230220T012150, end_date=20230220T012235
+[2023-02-20 01:22:35,778] {standard_task_runner.py:97} ERROR - Failed to execute job 29 for task get_mapping ("['updated_lat', 'updated_lon'] not in index"; 5654)
+[2023-02-20 01:22:35,885] {local_task_job.py:156} INFO - Task exited with return code 1
+[2023-02-20 01:22:35,927] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,37 @@
+[2023-02-20 12:56:22,339] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: autoetl-coordinates.get_new_geo manual__2023-02-20T12:55:37.672912+00:00 [queued]>
+[2023-02-20 12:56:22,352] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: autoetl-coordinates.get_new_geo manual__2023-02-20T12:55:37.672912+00:00 [queued]>
+[2023-02-20 12:56:22,353] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2023-02-20 12:56:22,354] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2023-02-20 12:56:22,355] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2023-02-20 12:56:22,370] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): get_new_geo> on 2023-02-20 12:55:37.672912+00:00
+[2023-02-20 12:56:22,378] {standard_task_runner.py:52} INFO - Started process 332 to run task
+[2023-02-20 12:56:22,383] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'autoetl-coordinates', 'get_new_geo', 'manual__2023-02-20T12:55:37.672912+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/autoetl-coordinates.py', '--cfg-path', '/tmp/tmpc1uhpxd8', '--error-file', '/tmp/tmp7bzx8_d3']
+[2023-02-20 12:56:22,385] {standard_task_runner.py:80} INFO - Job 7: Subtask get_new_geo
+[2023-02-20 12:56:22,450] {task_command.py:369} INFO - Running <TaskInstance: autoetl-coordinates.get_new_geo manual__2023-02-20T12:55:37.672912+00:00 [running]> on host 08ba3386fdbc
+[2023-02-20 12:56:22,529] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=autoetl-coordinates
+AIRFLOW_CTX_TASK_ID=get_new_geo
+AIRFLOW_CTX_EXECUTION_DATE=2023-02-20T12:55:37.672912+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-02-20T12:55:37.672912+00:00
+[2023-02-20 12:56:22,531] {logging_mixin.py:115} INFO - Load Data
+[2023-02-20 12:56:23,668] {logging_mixin.py:115} WARNING - /home/***/.local/lib/python3.7/site-packages/***/operators/python.py:189 DtypeWarning: Columns (11,12,14,20) have mixed types.Specify dtype option on import or set low_memory=False.
+[2023-02-20 13:08:09,512] {logging_mixin.py:115} INFO - Create Join Table
+[2023-02-20 13:08:09,738] {logging_mixin.py:115} WARNING - /opt/***/dags/autoetl-coordinates.py:72 FutureWarning: The default value of regex will change from True to False in a future version.
+[2023-02-20 13:08:09,895] {logging_mixin.py:115} WARNING - /opt/***/dags/autoetl-coordinates.py:72 SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+[2023-02-20 13:08:14,152] {logging_mixin.py:115} INFO - Define Functions
+[2023-02-20 13:08:14,157] {logging_mixin.py:115} INFO - Run distance function and get updated information
+[2023-02-20 13:37:38,337] {logging_mixin.py:115} INFO - Save updated location file to data
+[2023-02-20 13:38:17,649] {python.py:173} INFO - Done. Returned value was: None
+[2023-02-20 13:38:18,113] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=autoetl-coordinates, task_id=get_new_geo, execution_date=20230220T125537, start_date=20230220T125622, end_date=20230220T133818
+[2023-02-20 13:38:18,410] {local_task_job.py:221} WARNING - State of this instance has been externally set to success. Terminating instance.
+[2023-02-20 13:38:18,625] {process_utils.py:129} INFO - Sending Signals.SIGTERM to group 332. PIDs of all processes in the group: [332]
+[2023-02-20 13:38:18,643] {process_utils.py:80} INFO - Sending the signal Signals.SIGTERM to group 332
+[2023-02-20 13:38:25,179] {process_utils.py:75} INFO - Process psutil.Process(pid=332, status='terminated', exitcode=0, started='12:56:21') (332) terminated with exit code 0

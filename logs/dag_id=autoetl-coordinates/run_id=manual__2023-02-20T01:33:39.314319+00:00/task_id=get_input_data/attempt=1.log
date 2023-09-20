@@ -1,0 +1,41 @@
+[2023-02-20 01:33:41,951] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: autoetl-coordinates.get_input_data manual__2023-02-20T01:33:39.314319+00:00 [queued]>
+[2023-02-20 01:33:41,967] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: autoetl-coordinates.get_input_data manual__2023-02-20T01:33:39.314319+00:00 [queued]>
+[2023-02-20 01:33:41,968] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2023-02-20 01:33:41,969] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2023-02-20 01:33:41,971] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2023-02-20 01:33:41,986] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): get_input_data> on 2023-02-20 01:33:39.314319+00:00
+[2023-02-20 01:33:41,996] {standard_task_runner.py:52} INFO - Started process 5985 to run task
+[2023-02-20 01:33:42,001] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'autoetl-coordinates', 'get_input_data', 'manual__2023-02-20T01:33:39.314319+00:00', '--job-id', '32', '--raw', '--subdir', 'DAGS_FOLDER/autoetl-coordinates.py', '--cfg-path', '/tmp/tmprr2es6qy', '--error-file', '/tmp/tmpdc_80gd2']
+[2023-02-20 01:33:42,003] {standard_task_runner.py:80} INFO - Job 32: Subtask get_input_data
+[2023-02-20 01:33:42,072] {task_command.py:369} INFO - Running <TaskInstance: autoetl-coordinates.get_input_data manual__2023-02-20T01:33:39.314319+00:00 [running]> on host 83ee186d463f
+[2023-02-20 01:33:42,160] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=autoetl-coordinates
+AIRFLOW_CTX_TASK_ID=get_input_data
+AIRFLOW_CTX_EXECUTION_DATE=2023-02-20T01:33:39.314319+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-02-20T01:33:39.314319+00:00
+[2023-02-20 01:33:42,164] {logging_mixin.py:115} INFO - Get Locations URL and Load into Pandas Dataframe
+[2023-02-20 01:33:46,095] {logging_mixin.py:115} WARNING - /home/***/.local/lib/python3.7/site-packages/***/operators/python.py:189 DtypeWarning: Columns (11,12,14,20) have mixed types.Specify dtype option on import or set low_memory=False.
+[2023-02-20 01:33:54,251] {logging_mixin.py:115} INFO - Get buildings data
+[2023-02-20 01:34:06,086] {logging_mixin.py:115} INFO - Get parcels data
+[2023-02-20 01:34:06,726] {logging_mixin.py:115} WARNING - Downloading...
+[2023-02-20 01:34:06,728] {logging_mixin.py:115} WARNING - From: https://drive.google.com/uc?id=137bCzf0qEPLwKTgNxeAAjTs5MvyTlxWA
+[2023-02-20 01:34:06,730] {logging_mixin.py:115} WARNING - To: /opt/***/data/inputs/ms_hinds_parcels.ndgeojson.gz
+[2023-02-20 01:34:06,756] {logging_mixin.py:115} WARNING -   0%|          | 0.00/42.1M [00:00<?, ?B/s]
+[2023-02-20 01:34:06,871] {logging_mixin.py:115} WARNING -   7%|7         | 3.15M/42.1M [00:00<00:01, 27.8MB/s]
+[2023-02-20 01:34:06,983] {logging_mixin.py:115} WARNING -  17%|#7        | 7.34M/42.1M [00:00<00:01, 33.4MB/s]
+[2023-02-20 01:34:07,093] {logging_mixin.py:115} WARNING -  26%|##6       | 11.0M/42.1M [00:00<00:00, 33.4MB/s]
+[2023-02-20 01:34:07,205] {logging_mixin.py:115} WARNING -  37%|###7      | 15.7M/42.1M [00:00<00:00, 36.9MB/s]
+[2023-02-20 01:34:07,327] {logging_mixin.py:115} WARNING -  47%|####7     | 19.9M/42.1M [00:00<00:00, 35.9MB/s]
+[2023-02-20 01:34:07,435] {logging_mixin.py:115} WARNING -  60%|#####9    | 25.2M/42.1M [00:00<00:00, 40.1MB/s]
+[2023-02-20 01:34:07,540] {logging_mixin.py:115} WARNING -  72%|#######2  | 30.4M/42.1M [00:00<00:00, 43.2MB/s]
+[2023-02-20 01:34:07,640] {logging_mixin.py:115} WARNING -  89%|########8 | 37.2M/42.1M [00:00<00:00, 50.5MB/s]
+[2023-02-20 01:34:07,704] {logging_mixin.py:115} WARNING - 100%|##########| 42.1M/42.1M [00:00<00:00, 44.5MB/s]
+[2023-02-20 01:34:07,720] {logging_mixin.py:115} INFO - Extract and save gzip file
+[2023-02-20 01:34:18,578] {python.py:173} INFO - Done. Returned value was: None
+[2023-02-20 01:34:18,596] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=autoetl-coordinates, task_id=get_input_data, execution_date=20230220T013339, start_date=20230220T013341, end_date=20230220T013418
+[2023-02-20 01:34:18,669] {local_task_job.py:156} INFO - Task exited with return code 0
+[2023-02-20 01:34:18,713] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

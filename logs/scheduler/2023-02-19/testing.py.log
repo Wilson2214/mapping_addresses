@@ -1,0 +1,119 @@
+[2023-02-19 00:49:40,479] {processor.py:153} INFO - Started process (PID=180) to work on /opt/airflow/dags/testing.py
+[2023-02-19 00:49:40,500] {processor.py:641} INFO - Processing file /opt/airflow/dags/testing.py for tasks to queue
+[2023-02-19 00:49:40,502] {logging_mixin.py:115} INFO - [2023-02-19 00:49:40,502] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/testing.py
+[2023-02-19 00:49:41,417] {processor.py:651} INFO - DAG(s) dict_keys(['testing_dag']) retrieved from /opt/airflow/dags/testing.py
+[2023-02-19 00:49:41,465] {logging_mixin.py:115} INFO - [2023-02-19 00:49:41,464] {dag.py:2371} INFO - Sync 1 DAGs
+[2023-02-19 00:49:41,501] {logging_mixin.py:115} INFO - [2023-02-19 00:49:41,501] {dag.py:2919} INFO - Setting next_dagrun for testing_dag to None, run_after=None
+[2023-02-19 00:49:41,523] {processor.py:161} INFO - Processing /opt/airflow/dags/testing.py took 1.053 seconds
+[2023-02-19 00:50:06,620] {processor.py:153} INFO - Started process (PID=186) to work on /opt/airflow/dags/testing.py
+[2023-02-19 00:50:06,622] {processor.py:641} INFO - Processing file /opt/airflow/dags/testing.py for tasks to queue
+[2023-02-19 00:50:06,624] {logging_mixin.py:115} INFO - [2023-02-19 00:50:06,624] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/testing.py
+[2023-02-19 00:50:07,477] {logging_mixin.py:115} INFO - [2023-02-19 00:50:07,471] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/testing.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/testing.py", line 9, in <module>
+    import geopandas as gpd
+ModuleNotFoundError: No module named 'geopandas'
+[2023-02-19 00:50:07,479] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/testing.py
+[2023-02-19 00:50:07,516] {processor.py:161} INFO - Processing /opt/airflow/dags/testing.py took 0.907 seconds
+[2023-02-19 00:50:11,618] {processor.py:153} INFO - Started process (PID=192) to work on /opt/airflow/dags/testing.py
+[2023-02-19 00:50:11,620] {processor.py:641} INFO - Processing file /opt/airflow/dags/testing.py for tasks to queue
+[2023-02-19 00:50:11,621] {logging_mixin.py:115} INFO - [2023-02-19 00:50:11,621] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/testing.py
+[2023-02-19 00:50:12,087] {logging_mixin.py:115} INFO - [2023-02-19 00:50:12,082] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/testing.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/testing.py", line 9, in <module>
+    import geopandas as gpd
+ModuleNotFoundError: No module named 'geopandas'
+[2023-02-19 00:50:12,090] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/testing.py
+[2023-02-19 00:50:12,122] {processor.py:161} INFO - Processing /opt/airflow/dags/testing.py took 0.508 seconds
+[2023-02-19 00:50:42,340] {processor.py:153} INFO - Started process (PID=198) to work on /opt/airflow/dags/testing.py
+[2023-02-19 00:50:42,342] {processor.py:641} INFO - Processing file /opt/airflow/dags/testing.py for tasks to queue
+[2023-02-19 00:50:42,345] {logging_mixin.py:115} INFO - [2023-02-19 00:50:42,345] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/testing.py
+[2023-02-19 00:50:43,113] {logging_mixin.py:115} INFO - [2023-02-19 00:50:43,108] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/testing.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/testing.py", line 9, in <module>
+    import geopandas as gpd
+ModuleNotFoundError: No module named 'geopandas'
+[2023-02-19 00:50:43,125] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/testing.py
+[2023-02-19 00:50:43,203] {processor.py:161} INFO - Processing /opt/airflow/dags/testing.py took 0.871 seconds
+[2023-02-19 00:51:13,370] {processor.py:153} INFO - Started process (PID=204) to work on /opt/airflow/dags/testing.py
+[2023-02-19 00:51:13,373] {processor.py:641} INFO - Processing file /opt/airflow/dags/testing.py for tasks to queue
+[2023-02-19 00:51:13,374] {logging_mixin.py:115} INFO - [2023-02-19 00:51:13,374] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/testing.py
+[2023-02-19 00:51:13,910] {logging_mixin.py:115} INFO - [2023-02-19 00:51:13,905] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/testing.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/testing.py", line 9, in <module>
+    import geopandas as gpd
+ModuleNotFoundError: No module named 'geopandas'
+[2023-02-19 00:51:13,913] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/testing.py
+[2023-02-19 00:51:13,934] {processor.py:161} INFO - Processing /opt/airflow/dags/testing.py took 0.571 seconds
+[2023-02-19 00:51:28,864] {processor.py:153} INFO - Started process (PID=210) to work on /opt/airflow/dags/testing.py
+[2023-02-19 00:51:28,867] {processor.py:641} INFO - Processing file /opt/airflow/dags/testing.py for tasks to queue
+[2023-02-19 00:51:28,870] {logging_mixin.py:115} INFO - [2023-02-19 00:51:28,870] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/testing.py
+[2023-02-19 00:51:29,406] {logging_mixin.py:115} INFO - [2023-02-19 00:51:29,399] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/testing.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/testing.py", line 57, in <module>
+    start_date=datetime(2022, 5, 28),
+NameError: name 'datetime' is not defined
+[2023-02-19 00:51:29,408] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/testing.py
+[2023-02-19 00:51:29,439] {processor.py:161} INFO - Processing /opt/airflow/dags/testing.py took 0.581 seconds
+[2023-02-19 00:51:59,551] {processor.py:153} INFO - Started process (PID=228) to work on /opt/airflow/dags/testing.py
+[2023-02-19 00:51:59,553] {processor.py:641} INFO - Processing file /opt/airflow/dags/testing.py for tasks to queue
+[2023-02-19 00:51:59,555] {logging_mixin.py:115} INFO - [2023-02-19 00:51:59,554] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/testing.py
+[2023-02-19 00:51:59,911] {logging_mixin.py:115} INFO - [2023-02-19 00:51:59,909] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/testing.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/testing.py", line 57, in <module>
+    start_date=datetime(2022, 5, 28),
+NameError: name 'datetime' is not defined
+[2023-02-19 00:51:59,914] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/testing.py
+[2023-02-19 00:51:59,938] {processor.py:161} INFO - Processing /opt/airflow/dags/testing.py took 0.391 seconds
+[2023-02-19 00:52:30,036] {processor.py:153} INFO - Started process (PID=246) to work on /opt/airflow/dags/testing.py
+[2023-02-19 00:52:30,038] {processor.py:641} INFO - Processing file /opt/airflow/dags/testing.py for tasks to queue
+[2023-02-19 00:52:30,040] {logging_mixin.py:115} INFO - [2023-02-19 00:52:30,040] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/testing.py
+[2023-02-19 00:52:30,399] {logging_mixin.py:115} INFO - [2023-02-19 00:52:30,395] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/testing.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/testing.py", line 57, in <module>
+    start_date=datetime(2022, 5, 28),
+NameError: name 'datetime' is not defined
+[2023-02-19 00:52:30,402] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/testing.py
+[2023-02-19 00:52:30,422] {processor.py:161} INFO - Processing /opt/airflow/dags/testing.py took 0.389 seconds
+[2023-02-19 00:53:00,532] {processor.py:153} INFO - Started process (PID=252) to work on /opt/airflow/dags/testing.py
+[2023-02-19 00:53:00,538] {processor.py:641} INFO - Processing file /opt/airflow/dags/testing.py for tasks to queue
+[2023-02-19 00:53:00,540] {logging_mixin.py:115} INFO - [2023-02-19 00:53:00,540] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/testing.py
+[2023-02-19 00:53:00,922] {logging_mixin.py:115} INFO - [2023-02-19 00:53:00,919] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/testing.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/testing.py", line 57, in <module>
+    start_date=datetime(2022, 5, 28),
+NameError: name 'datetime' is not defined
+[2023-02-19 00:53:00,924] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/testing.py
+[2023-02-19 00:53:00,947] {processor.py:161} INFO - Processing /opt/airflow/dags/testing.py took 0.419 seconds

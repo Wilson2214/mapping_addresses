@@ -1,0 +1,33 @@
+[2023-02-19 14:19:57,924] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: autoetl-coordinates.get_input_data manual__2023-02-19T14:19:53.784126+00:00 [queued]>
+[2023-02-19 14:19:57,944] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: autoetl-coordinates.get_input_data manual__2023-02-19T14:19:53.784126+00:00 [queued]>
+[2023-02-19 14:19:57,954] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2023-02-19 14:19:57,958] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2023-02-19 14:19:57,960] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2023-02-19 14:19:57,984] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): get_input_data> on 2023-02-19 14:19:53.784126+00:00
+[2023-02-19 14:19:57,997] {standard_task_runner.py:52} INFO - Started process 206 to run task
+[2023-02-19 14:19:58,004] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'autoetl-coordinates', 'get_input_data', 'manual__2023-02-19T14:19:53.784126+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/autoetl-coordinates.py', '--cfg-path', '/tmp/tmpxsc1u18_', '--error-file', '/tmp/tmpgqc4n08w']
+[2023-02-19 14:19:58,007] {standard_task_runner.py:80} INFO - Job 2: Subtask get_input_data
+[2023-02-19 14:19:58,180] {task_command.py:369} INFO - Running <TaskInstance: autoetl-coordinates.get_input_data manual__2023-02-19T14:19:53.784126+00:00 [running]> on host 28bff766bd86
+[2023-02-19 14:19:58,454] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=autoetl-coordinates
+AIRFLOW_CTX_TASK_ID=get_input_data
+AIRFLOW_CTX_EXECUTION_DATE=2023-02-19T14:19:53.784126+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-02-19T14:19:53.784126+00:00
+[2023-02-19 14:20:03,840] {logging_mixin.py:115} WARNING - /home/***/.local/lib/python3.7/site-packages/***/operators/python.py:189 DtypeWarning: Columns (11,12,14,20) have mixed types.Specify dtype option on import or set low_memory=False.
+[2023-02-19 14:20:43,790] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/autoetl-coordinates.py", line 41, in get_input_data
+    output = cwd + '/data/ms_hinds_parcels.ndgeojson.gz'
+NameError: name 'cwd' is not defined
+[2023-02-19 14:20:43,866] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=autoetl-coordinates, task_id=get_input_data, execution_date=20230219T141953, start_date=20230219T141957, end_date=20230219T142043
+[2023-02-19 14:20:43,956] {standard_task_runner.py:97} ERROR - Failed to execute job 2 for task get_input_data (name 'cwd' is not defined; 206)
+[2023-02-19 14:20:44,284] {local_task_job.py:156} INFO - Task exited with return code 1
+[2023-02-19 14:20:44,330] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,31 @@
+[2023-02-20 01:26:47,099] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: autoetl-coordinates.get_metrics manual__2023-02-20T01:26:43.088895+00:00 [queued]>
+[2023-02-20 01:26:47,115] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: autoetl-coordinates.get_metrics manual__2023-02-20T01:26:43.088895+00:00 [queued]>
+[2023-02-20 01:26:47,117] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2023-02-20 01:26:47,119] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2023-02-20 01:26:47,121] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2023-02-20 01:26:47,139] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): get_metrics> on 2023-02-20 01:26:43.088895+00:00
+[2023-02-20 01:26:47,149] {standard_task_runner.py:52} INFO - Started process 5783 to run task
+[2023-02-20 01:26:47,155] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'autoetl-coordinates', 'get_metrics', 'manual__2023-02-20T01:26:43.088895+00:00', '--job-id', '30', '--raw', '--subdir', 'DAGS_FOLDER/autoetl-coordinates.py', '--cfg-path', '/tmp/tmpnfm19_nr', '--error-file', '/tmp/tmpvls5frv2']
+[2023-02-20 01:26:47,157] {standard_task_runner.py:80} INFO - Job 30: Subtask get_metrics
+[2023-02-20 01:26:47,247] {task_command.py:369} INFO - Running <TaskInstance: autoetl-coordinates.get_metrics manual__2023-02-20T01:26:43.088895+00:00 [running]> on host 83ee186d463f
+[2023-02-20 01:26:47,354] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=autoetl-coordinates
+AIRFLOW_CTX_TASK_ID=get_metrics
+AIRFLOW_CTX_EXECUTION_DATE=2023-02-20T01:26:43.088895+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-02-20T01:26:43.088895+00:00
+[2023-02-20 01:26:47,356] {logging_mixin.py:115} INFO - Load Data
+[2023-02-20 01:26:49,563] {logging_mixin.py:115} WARNING - /home/***/.local/lib/python3.7/site-packages/***/operators/python.py:189 DtypeWarning: Columns (12,13,15,21) have mixed types.Specify dtype option on import or set low_memory=False.
+[2023-02-20 01:26:49,673] {logging_mixin.py:115} INFO - Clean updated locations
+[2023-02-20 01:26:51,077] {logging_mixin.py:115} WARNING - /opt/***/dags/autoetl-coordinates.py:184 FutureWarning: The default value of regex will change from True to False in a future version. In addition, single character regular expressions will *not* be treated as literal strings when regex=True.
+[2023-02-20 01:26:51,185] {logging_mixin.py:115} WARNING - /opt/***/dags/autoetl-coordinates.py:185 FutureWarning: The default value of regex will change from True to False in a future version. In addition, single character regular expressions will *not* be treated as literal strings when regex=True.
+[2023-02-20 01:26:51,426] {logging_mixin.py:115} INFO - Save updated location file to data
+[2023-02-20 01:27:13,647] {logging_mixin.py:115} INFO - Calculate Metrics
+[2023-02-20 01:27:13,808] {logging_mixin.py:115} INFO - Create dataframe for metrics and save
+[2023-02-20 01:27:13,873] {python.py:173} INFO - Done. Returned value was: None
+[2023-02-20 01:27:13,903] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=autoetl-coordinates, task_id=get_metrics, execution_date=20230220T012643, start_date=20230220T012647, end_date=20230220T012713
+[2023-02-20 01:27:14,103] {local_task_job.py:156} INFO - Task exited with return code 0
+[2023-02-20 01:27:14,168] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

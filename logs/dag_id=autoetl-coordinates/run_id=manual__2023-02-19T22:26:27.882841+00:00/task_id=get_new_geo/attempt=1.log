@@ -1,0 +1,53 @@
+[2023-02-19 22:27:20,089] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: autoetl-coordinates.get_new_geo manual__2023-02-19T22:26:27.882841+00:00 [queued]>
+[2023-02-19 22:27:20,104] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: autoetl-coordinates.get_new_geo manual__2023-02-19T22:26:27.882841+00:00 [queued]>
+[2023-02-19 22:27:20,105] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2023-02-19 22:27:20,107] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2023-02-19 22:27:20,108] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2023-02-19 22:27:20,124] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): get_new_geo> on 2023-02-19 22:26:27.882841+00:00
+[2023-02-19 22:27:20,147] {standard_task_runner.py:52} INFO - Started process 1495 to run task
+[2023-02-19 22:27:20,153] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'autoetl-coordinates', 'get_new_geo', 'manual__2023-02-19T22:26:27.882841+00:00', '--job-id', '15', '--raw', '--subdir', 'DAGS_FOLDER/autoetl-coordinates.py', '--cfg-path', '/tmp/tmpubrdrsc9', '--error-file', '/tmp/tmp5adk0qne']
+[2023-02-19 22:27:20,155] {standard_task_runner.py:80} INFO - Job 15: Subtask get_new_geo
+[2023-02-19 22:27:20,222] {task_command.py:369} INFO - Running <TaskInstance: autoetl-coordinates.get_new_geo manual__2023-02-19T22:26:27.882841+00:00 [running]> on host 83ee186d463f
+[2023-02-19 22:27:20,316] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=autoetl-coordinates
+AIRFLOW_CTX_TASK_ID=get_new_geo
+AIRFLOW_CTX_EXECUTION_DATE=2023-02-19T22:26:27.882841+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-02-19T22:26:27.882841+00:00
+[2023-02-19 22:27:20,319] {logging_mixin.py:115} INFO - Load Data
+[2023-02-19 22:27:22,209] {logging_mixin.py:115} WARNING - /home/***/.local/lib/python3.7/site-packages/***/operators/python.py:189 DtypeWarning: Columns (11,12,14,20) have mixed types.Specify dtype option on import or set low_memory=False.
+[2023-02-19 22:39:08,789] {logging_mixin.py:115} INFO - Create Join Table
+[2023-02-19 22:39:08,957] {logging_mixin.py:115} WARNING - /opt/***/dags/autoetl-coordinates.py:69 FutureWarning: The default value of regex will change from True to False in a future version.
+[2023-02-19 22:39:09,114] {logging_mixin.py:115} WARNING - /opt/***/dags/autoetl-coordinates.py:69 SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+[2023-02-19 22:39:14,218] {logging_mixin.py:115} INFO - Define Functions
+[2023-02-19 22:39:14,225] {logging_mixin.py:115} INFO - Run distance function and get updated information
+[2023-02-19 23:07:16,396] {logging_mixin.py:115} INFO - TEMP SAVE FOR TESTING, TO REMOVE
+[2023-02-19 23:07:28,073] {logging_mixin.py:115} INFO - Clean updated locations
+[2023-02-19 23:07:28,352] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/autoetl-coordinates.py", line 176, in get_new_geo
+    locations['updated_lon'] = split_df[[1]]
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/frame.py", line 3464, in __getitem__
+    indexer = self.loc._get_listlike_indexer(key, axis=1)[1]
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/indexing.py", line 1314, in _get_listlike_indexer
+    self._validate_read_indexer(keyarr, indexer, axis)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/indexing.py", line 1374, in _validate_read_indexer
+    raise KeyError(f"None of [{key}] are in the [{axis_name}]")
+KeyError: "None of [Int64Index([1], dtype='int64')] are in the [columns]"
+[2023-02-19 23:07:28,584] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=autoetl-coordinates, task_id=get_new_geo, execution_date=20230219T222627, start_date=20230219T222720, end_date=20230219T230728
+[2023-02-19 23:07:28,833] {standard_task_runner.py:97} ERROR - Failed to execute job 15 for task get_new_geo ("None of [Int64Index([1], dtype='int64')] are in the [columns]"; 1495)
+[2023-02-19 23:07:33,118] {local_task_job.py:221} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2023-02-19 23:07:33,721] {process_utils.py:129} INFO - Sending Signals.SIGTERM to group 1495. PIDs of all processes in the group: [1495]
+[2023-02-19 23:07:33,737] {process_utils.py:80} INFO - Sending the signal Signals.SIGTERM to group 1495
+[2023-02-19 23:07:42,301] {process_utils.py:75} INFO - Process psutil.Process(pid=1495, status='terminated', exitcode=1, started='22:27:19') (1495) terminated with exit code 1

@@ -1,0 +1,44 @@
+[2023-02-20 12:10:41,602] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: autoetl-coordinates.get_input_data manual__2023-02-20T05:04:54.991565+00:00 [queued]>
+[2023-02-20 12:10:41,623] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: autoetl-coordinates.get_input_data manual__2023-02-20T05:04:54.991565+00:00 [queued]>
+[2023-02-20 12:10:41,625] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2023-02-20 12:10:41,626] {taskinstance.py:1357} INFO - Starting attempt 2 of 1
+[2023-02-20 12:10:41,628] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2023-02-20 12:10:41,656] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): get_input_data> on 2023-02-20 05:04:54.991565+00:00
+[2023-02-20 12:10:41,675] {standard_task_runner.py:52} INFO - Started process 197 to run task
+[2023-02-20 12:10:41,698] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'autoetl-coordinates', 'get_input_data', 'manual__2023-02-20T05:04:54.991565+00:00', '--job-id', '41', '--raw', '--subdir', 'DAGS_FOLDER/autoetl-coordinates.py', '--cfg-path', '/tmp/tmpws3a9tn6', '--error-file', '/tmp/tmps4tb0_u8']
+[2023-02-20 12:10:41,700] {standard_task_runner.py:80} INFO - Job 41: Subtask get_input_data
+[2023-02-20 12:10:41,878] {task_command.py:369} INFO - Running <TaskInstance: autoetl-coordinates.get_input_data manual__2023-02-20T05:04:54.991565+00:00 [running]> on host d2b408f32557
+[2023-02-20 12:10:42,051] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=autoetl-coordinates
+AIRFLOW_CTX_TASK_ID=get_input_data
+AIRFLOW_CTX_EXECUTION_DATE=2023-02-20T05:04:54.991565+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-02-20T05:04:54.991565+00:00
+[2023-02-20 12:10:42,058] {logging_mixin.py:115} INFO - Get Locations URL and Load into Pandas Dataframe
+[2023-02-20 12:10:47,918] {logging_mixin.py:115} WARNING - /home/***/.local/lib/python3.7/site-packages/***/operators/python.py:189 DtypeWarning: Columns (11,12,14,20) have mixed types.Specify dtype option on import or set low_memory=False.
+[2023-02-20 12:10:58,263] {logging_mixin.py:115} INFO - Get buildings data
+[2023-02-20 12:11:12,358] {logging_mixin.py:115} INFO - Get parcels data
+[2023-02-20 12:11:13,255] {logging_mixin.py:115} WARNING - Downloading...
+[2023-02-20 12:11:13,256] {logging_mixin.py:115} WARNING - From: https://drive.google.com/uc?id=137bCzf0qEPLwKTgNxeAAjTs5MvyTlxWA
+[2023-02-20 12:11:13,258] {logging_mixin.py:115} WARNING - To: /opt/***/data/inputs/ms_hinds_parcels.ndgeojson.gz
+[2023-02-20 12:11:13,273] {logging_mixin.py:115} WARNING -   0%|          | 0.00/42.1M [00:00<?, ?B/s]
+[2023-02-20 12:11:13,387] {logging_mixin.py:115} WARNING -   4%|3         | 1.57M/42.1M [00:00<00:02, 13.9MB/s]
+[2023-02-20 12:11:13,491] {logging_mixin.py:115} WARNING -  12%|#2        | 5.24M/42.1M [00:00<00:01, 26.1MB/s]
+[2023-02-20 12:11:13,744] {logging_mixin.py:115} WARNING -  20%|#9        | 8.39M/42.1M [00:00<00:01, 17.0MB/s]
+[2023-02-20 12:11:13,854] {logging_mixin.py:115} WARNING -  29%|##8       | 12.1M/42.1M [00:00<00:01, 21.8MB/s]
+[2023-02-20 12:11:13,965] {logging_mixin.py:115} WARNING -  37%|###7      | 15.7M/42.1M [00:00<00:01, 25.1MB/s]
+[2023-02-20 12:11:14,073] {logging_mixin.py:115} WARNING -  46%|####6     | 19.4M/42.1M [00:00<00:00, 27.7MB/s]
+[2023-02-20 12:11:14,177] {logging_mixin.py:115} WARNING -  59%|#####8    | 24.6M/42.1M [00:00<00:00, 34.2MB/s]
+[2023-02-20 12:11:14,281] {logging_mixin.py:115} WARNING -  70%|######9   | 29.4M/42.1M [00:01<00:00, 37.4MB/s]
+[2023-02-20 12:11:14,393] {logging_mixin.py:115} WARNING -  82%|########2 | 34.6M/42.1M [00:01<00:00, 40.4MB/s]
+[2023-02-20 12:11:14,497] {logging_mixin.py:115} WARNING -  96%|#########5| 40.4M/42.1M [00:01<00:00, 44.7MB/s]
+[2023-02-20 12:11:14,537] {logging_mixin.py:115} WARNING - 100%|##########| 42.1M/42.1M [00:01<00:00, 33.3MB/s]
+[2023-02-20 12:11:14,558] {logging_mixin.py:115} INFO - Extract and save gzip file
+[2023-02-20 12:12:02,399] {logging_mixin.py:115} INFO - Convert ndgeojson to csv
+[2023-02-20 12:27:19,779] {local_task_job.py:221} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2023-02-20 12:27:21,989] {process_utils.py:129} INFO - Sending Signals.SIGTERM to group 197. PIDs of all processes in the group: [197]
+[2023-02-20 12:27:22,078] {process_utils.py:80} INFO - Sending the signal Signals.SIGTERM to group 197
+[2023-02-20 12:27:58,611] {local_task_job.py:84} ERROR - Received SIGTERM. Terminating subprocesses

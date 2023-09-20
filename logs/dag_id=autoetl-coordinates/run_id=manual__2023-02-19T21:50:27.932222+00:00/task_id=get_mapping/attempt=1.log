@@ -1,0 +1,49 @@
+[2023-02-19 21:50:30,937] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: autoetl-coordinates.get_mapping manual__2023-02-19T21:50:27.932222+00:00 [queued]>
+[2023-02-19 21:50:30,951] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: autoetl-coordinates.get_mapping manual__2023-02-19T21:50:27.932222+00:00 [queued]>
+[2023-02-19 21:50:30,952] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2023-02-19 21:50:30,954] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2023-02-19 21:50:30,955] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2023-02-19 21:50:30,970] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): get_mapping> on 2023-02-19 21:50:27.932222+00:00
+[2023-02-19 21:50:30,982] {standard_task_runner.py:52} INFO - Started process 977 to run task
+[2023-02-19 21:50:30,988] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'autoetl-coordinates', 'get_mapping', 'manual__2023-02-19T21:50:27.932222+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/autoetl-coordinates.py', '--cfg-path', '/tmp/tmp4x4b1jtp', '--error-file', '/tmp/tmpy543or4_']
+[2023-02-19 21:50:30,990] {standard_task_runner.py:80} INFO - Job 10: Subtask get_mapping
+[2023-02-19 21:50:31,095] {task_command.py:369} INFO - Running <TaskInstance: autoetl-coordinates.get_mapping manual__2023-02-19T21:50:27.932222+00:00 [running]> on host 83ee186d463f
+[2023-02-19 21:50:31,190] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=autoetl-coordinates
+AIRFLOW_CTX_TASK_ID=get_mapping
+AIRFLOW_CTX_EXECUTION_DATE=2023-02-19T21:50:27.932222+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-02-19T21:50:27.932222+00:00
+[2023-02-19 21:50:31,192] {logging_mixin.py:115} INFO - Load Data
+[2023-02-19 21:50:31,200] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/autoetl-coordinates.py", line 214, in get_mapping
+    locations = pd.read_csv('./data/outputs/locations_updated.csv')
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 586, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 482, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 811, in __init__
+    self._engine = self._make_engine(self.engine)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 1040, in _make_engine
+    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 51, in __init__
+    self._open_handles(src, kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/base_parser.py", line 229, in _open_handles
+    errors=kwds.get("encoding_errors", "strict"),
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/common.py", line 707, in get_handle
+    newline="",
+FileNotFoundError: [Errno 2] No such file or directory: './data/outputs/locations_updated.csv'
+[2023-02-19 21:50:31,226] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=autoetl-coordinates, task_id=get_mapping, execution_date=20230219T215027, start_date=20230219T215030, end_date=20230219T215031
+[2023-02-19 21:50:31,242] {standard_task_runner.py:97} ERROR - Failed to execute job 10 for task get_mapping ([Errno 2] No such file or directory: './data/outputs/locations_updated.csv'; 977)
+[2023-02-19 21:50:31,283] {local_task_job.py:156} INFO - Task exited with return code 1
+[2023-02-19 21:50:31,322] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
